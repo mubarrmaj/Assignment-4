@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Assignment</title>
+    <style>
+        #main {
+            text-align: center;
+            margin-top: 15vw;
+        }
+
+        button{
+            border-radius:4px;
+            background-color: rgb(23, 187, 127);
+            color: white;
+            padding: 10px;
+        }
+
+        button:hover{
+            background-color: rgb(5, 152, 98);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <h1>Table Calculator</h1>
+        <p>(Table of integer less than 20 will be printed in reverse order)</p>
+        <button id="btn" onclick="myFunction()">Calculate Table</button>
+        <button id="btn1" onclick="myFunction1()">Reset</button>
+        <p id="para"></p>
+    </div>
+    <script>
+        function reverseTable(num, limit){
+            for(var i=limit; i>=1; i--){
+                result = i * num;
+                document.getElementById("para").innerHTML += (num+" * "+i+" = "+result+"<br/>");
+            }
+        }
+        function forwardTable(num, limit){
+            for(var i=1; i<=limit; i++){
+                result = i * num;
+                document.getElementById("para").innerHTML += (num+" * "+i+" = "+result+"<br/>");
+            }
+        }
+        function myFunction() {
+            var x = window.prompt("Please enter an integer to calculate table: ");
+            var x = Number(x);
+            var y = window.prompt("Please enter limit of table: ");
+            var y = Number(y);
+            if(x<20){
+                reverseTable(x,y);
+            }
+            else{
+                forwardTable(x,y);
+            }
+        }
+        function myFunction1(){
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>
